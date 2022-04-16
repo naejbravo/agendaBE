@@ -27,7 +27,6 @@ app.use((req, res, next) => {
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
       "https://agenda-fe.vercel.app/",
       // "https://angular-continent-countries.vercel.app", "http://localhost:4200"
     ],
