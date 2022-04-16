@@ -10,6 +10,6 @@ const {
 AgendaRoutes.get("/", getAgenda);
 AgendaRoutes.post("/", postAgenda);
 AgendaRoutes.delete("/:id", deleteAgenda);
-AgendaRoutes.put("/:id", updateAgenda);
+AgendaRoutes.patch("/:id", updateAgenda);
 
 module.exports = AgendaRoutes;
