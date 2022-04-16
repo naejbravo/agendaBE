@@ -28,11 +28,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/agenda", AgendaRoutes);
 
-app.use("/", (req, res, next) => {
-  return res.json({
-    res: "funciona",
-  });
-});
+// app.use("/", (req, res, next) => {
+//   return res.json({
+//     res: "funciona",
+//   });
+// });
 
 app.listen(PORT, () => {
   console.log(`El servidor esta iniciado en el puerto ${PORT}`);
