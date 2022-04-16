@@ -40,8 +40,8 @@ const updateAgenda = async (req, res, next) => {
     let update = {
       $set: {
         title: data.title,
-        startDate: { $toDate: data.start },
-        // endDate: { $toDate: data.end },
+        startDate: data.start,
+        endDate: data.end,
       },
     };
     const agendaDB = await Agenda.updateOne({ _id: id }, update);
