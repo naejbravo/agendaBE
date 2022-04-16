@@ -18,7 +18,7 @@ connectDb();
 // app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Methods", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, PATCH");
   res.header("Access-Control-Allow-Credentials", true);
   res.header("Access-Control-Allow-Headers", "Content-Type");
   next();
@@ -30,7 +30,7 @@ app.use(
       "https://agenda-fe.vercel.app/",
       // "https://angular-continent-countries.vercel.app", "http://localhost:4200"
     ],
-    credentials: true,
+    //credentials: true,
   })
 );
 
