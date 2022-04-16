@@ -35,13 +35,13 @@ const deleteAgenda = async (req, res, next) => {
 const updateAgenda = async (req, res, next) => {
   try {
     const { id } = await req.params;
-    console.log(id);
     const data = await req.body;
-    const agendaDB = await Agenda.updateOne(
-      { _id: id },
-      { $set: { title: data.title, startDate: data.start, endDate: data.end } }
-    );
-    res.status(202).json(agendaDB);
+
+    let update = {
+      $set: { title: data.title, startDate: data.start, endDate: data.end },
+    };
+    const agendaDB = await Agenda.updateOne({ _id: id }, update);
+    res.status(202).json(data);
   } catch (error) {
     next(error);
     return;
