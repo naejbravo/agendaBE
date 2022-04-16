@@ -24,6 +24,16 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      // "https://angular-continent-countries.vercel.app", "http://localhost:4200"
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/agenda", AgendaRoutes);
